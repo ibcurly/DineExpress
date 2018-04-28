@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<meta charset="utf-8">
+
+<title>bill splitter</title>
+
+<body>
+
+    <article>
+
+        <header>
+
+            <h1>Bill Splitter</h1>
+
+        </header>
+		
+		<form onsubmit="return false" oninput="    total.value = people.valueAsNumber*((billAmount.valueAsNumber + (billAmount.valueAsNumber * tip.valueAsNumber/100)) / people.valueAsNumber);">
+
+            *Bill Amount : $  <input name="billAmount" id="billAmount" type="number" value ="">
+
+            <br />
+			<br />
+
+
+            *Tip%  <input name="tip" id="tip" type="number" value = "15">
+
+            <br />
+			<br />
+
+            *No. of people  <input name="people" id="people" type="number">
+
+            <br />
+			<br />
+			
+			<tr>
+               <td colspan="4">
+                  Total : $  <input type="text" name="total" id="total" disabled>
+               </td>
+            </tr>
+			
+			<br />
+			<br />
+			
+			<tr>
+               <td colspan="4">
+                  Total Each : $  <input type="text" name="totaleach" id="totaleach" disabled>
+               </td>
+            </tr>
+			
+			<br />
+			<br />
+			
+			<tr>
+               <td colspan="4">
+                  Total tip : $  <input type="text" name="tiptotal" id="tiptotal" disabled>
+               </td>
+            </tr>
+			
+			<br />
+			<br />
+			
+			<tr>
+               <td colspan="4">
+                  Tip Each : $  <input type="text" name="tipeach" id="tipeach" disabled>
+               </td>
+            </tr>
+			
+			<br />
+			<br />
+
+
+        </form>
+		<tr>
+               
+               <td><input type="button" name="doit" value="Calculate" onclick="total.value = eval(total.value);
+			   totaleach.value = eval((total.value/people.valueAsNumber).toFixed(2));
+			   tiptotal.value = eval((total.value - billAmount.valueAsNumber).toFixed(2));
+			   tipeach.value = eval((tiptotal.value / people.valueAsNumber).toFixed(2));"></td>
+			   <td><input type="button" id="clear" name="clear" value="Clear" onclick="billAmount.value='';
+			   tip.value='';
+			   people.value='';
+			   total.value = '';
+			   totaleach.value = '';
+			   tiptotal.value = '';
+			   tipeach.value = '';"></td>
+			   
+            </tr>
+
+        <footer>
+
+            <h1></h1>
+
+            <p>*Required Field</p>
+
+        </footer>
+
+    </article>
+
+</body>
+
+ 
+
+</html>

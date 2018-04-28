@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--
+
+Grill Template
+
+http://www.templatemo.com/free-website-templates/417-grill
+
+-->
+    <head>
+        <meta charset="utf-8">
+        <title>Contact - Grill Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/templatemo_style.css">
+        <link rel="stylesheet" href="css/templatemo_misc.css">
+        <link rel="stylesheet" href="css/flexslider.css">
+        <link rel="stylesheet" href="css/testimonails-slider.css">
+
+        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <!-- ************************************************* -->
+        <!-- Below block contains style and script for calculator-->
+        <style>
+        body
+        {
+            background-color:tan;
+        }
+        .box
+        {
+            background-color:#3d4543;
+            height:300px;
+            width:250px;
+            border-radius:10px;
+            position:relative;
+            
+            left:40%;
+        }
+        .display
+        {
+            background-color:#222;
+            width:220px;
+            position:relative;
+            left:15px;
+            top:20px;
+            height:40px;
+        }
+        
+        .label
+        {
+            background-color:#ffffff;
+            width:100px;
+            position:relative;
+            left:15px;
+            top:20px;
+            height:30px;
+        }
+        
+        tr.spaceUnder>td {
+          padding-top: 1em;
+          padding-right: 0.5em;
+          padding-left: 0.5em;
+        }
+        
+        .display input
+        {
+         
+         
+             position:relative;
+            left:2px;
+            top:2px;
+            height:35px;
+            color:black;
+            background-color:#bccd95;
+            font-size:21px;
+            text-align:right;
+        }
+        .keys
+        {
+            position:relative;
+            top:45px;
+        }
+        
+        .keys2
+        {
+            position:relative;
+            width:100px;
+            top:15px;
+        }
+        
+        
+        .button
+        {
+            width:40px;
+            height:30px;
+            border:none;
+            border-radius:8px;
+            margin-left:17px;
+            cursor:pointer;
+            border-top:2px solid transparent;
+        }
+        .button.gray
+        {
+            color:white;
+            background-color:#6f6f6f;
+            border-bottom:black 2px solid;
+            border-top:2px #6f6f6f solid;
+        }
+        .button.pink
+        {
+            color:black;
+            background-color:#ff4561;
+            border-bottom:black 2px solid;
+        }
+        .button.red
+        {
+            color:red;
+            background-color:303030;
+            border-bottom:black 2px solid;
+            border-top:2px 303030 solid;
+        }
+        .button.orange
+        {
+            color:black;
+            background-color:FF9933;
+            border-bottom:black 2px solid;
+            border-top:2px FF9933 solid;
+        }
+        .gray:active
+        {
+            border-top:black 2px solid;
+            border-bottom:2px #6f6f6f solid;
+        }
+        .pink:active
+        {
+            border-top:black 2px solid;
+            border-bottom:#ff4561 2px solid;
+        }
+        .black:active
+        {
+         
+         
+             border-top:black 2px solid;
+            border-bottom:#303030 2px solid;
+        }
+        .orange:active
+        {
+            border-top:black 2px solid;
+            border-bottom:FF9933 2px solid;
+        }
+        p
+        {
+            line-height:10px;
+        }
+        </style>
+        <script>
+        function c(val)
+        {
+            document.getElementById("d").value=val;
+        }
+        function math(val)
+        {
+            document.getElementById("d").value+=val;
+        }
+        function e()
+        {
+            try
+            {
+              c(eval(document.getElementById("d").value))
+            }
+            catch(e)
+            {
+              c('Error')
+            }
+        }
+        
+        function bill()
+        {
+            val = document.getElementById("bill").value;
+             tax = val * 0.07;
+             document.getElementById("tax").value = tax;
+            
+             final_value= parseFloat(val) + parseFloat(tax)
+             document.getElementById("final").value = final_value
+             
+             peoplecount = document.getElementById("people").value
+             personshare= parseFloat(final_value)/parseFloat(peoplecount)   
+             document.getElementById("share").value = personshare
+        } 
+        
+        function reset()
+        {
+            document.getElementById("d").value = 0
+            document.getElementById("bill").value = 0
+            document.getElementById("people").value = 1
+            document.getElementById("tax").value = ""
+            document.getElementById("final").value = ""
+            document.getElementById("share").value = ""
+        }
+        
+        function isNumberKey(evt){
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode != 46 &&(charCode < 48 || charCode > 57)))
+                return false;
+            return true;
+        }
+        
+         
+        </script>
+        <!-- ************************************************* -->
+        
+    </head>
+    <body onload="reset()">
+    </br>
+    </br>
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lavender;">
+        <div class="box">
+        <div class="display"><input type="text" readonly size="15.75" id="d"></div>
+        <div class="keys">
+            <p>
+            <input type="button" class="button gray" value="mrc" onclick='c("not defined ")'>
+            <input type="button" class="button gray" value="(" onclick='math("(")'>
+            <input type="button" class="button gray" value=")" onclick='math(")")'>
+            <input type="button" class="button pink" value="/" onclick='math("/")'>
+            </p>
+            <p>
+            <input type="button" class="button red" value="7" onclick='math("7")'>
+            <input type="button" class="button red" value="8" onclick='math("8")'>
+            <input type="button" class="button red" value="9" onclick='math("9")'>
+            <input type="button" class="button pink" value="*" onclick='math("*")'>
+            </p>
+            <p>
+            <input type="button" class="button red" value="4" onclick='math("4")'>
+            <input type="button" class="button red" value="5" onclick='math("5")'>
+            <input type="button" class="button red" value="6" onclick='math("6")'>
+            <input type="button" class="button pink" value="-" onclick='math("-")'>
+            </p>
+            <p>
+            <input type="button" class="button red" value="1" onclick='math("1")'>
+            <input type="button" class="button red" value="2" onclick='math("2")'>
+            <input type="button" class="button red" value="3" onclick='math("3")'>
+            <input type="button" class="button pink" value="+" onclick='math("+")'>
+            </p>
+            <p>
+            <input type="button" class="button red" value="0" onclick='math("0")'>
+            <input type="button" class="button red" value="." onclick='math(".")'>
+            <input type="button" class="button red" value="C" onclick='c("")'>
+            <input type="button" class="button orange" value="=" onclick='e()'>
+            </p>
+        </div>
+        </div>    
+    </div>  
+    
+    <div class="col-sm-4" style="background-color:lavenderblush;">    
+        <div class="box">
+        <table>
+        <tr class="spaceUnder">
+            <td><p style="color:#ffffff";>Sub Total : </p></td>
+            <td><input type="text" value = 0 size="11.75" id="bill" onkeypress="return isNumberKey(event)"></td>
+        </tr>
+        <tr class="spaceUnder">
+            <td><p style="color:#ffffff";>No of people : </p></td>
+            <td><input type="text" value = 1 size="11.75" id="people" onkeypress="return isNumberKey(event)"></td>
+        </tr>    
+        <tr class="spaceUnder">
+            <td><input type="button" value="Reset bill" onclick='reset()'>
+        </tr>    
+        <tr>
+            <td><input type="button" value="Calculate bill" onclick='bill()'></tr>
+        </tr>    
+        <tr class="spaceUnder">
+            <td><p style="color:#ffffff";>Sales Tax(7.0%)</p></td>
+            <td><input type="text" readonly size="11.75" id="tax"></td>
+        </tr>    
+        <tr class="spaceUnder">
+            <td><p style="color:#ffffff";>Grand Total</p></td>
+            <td><input type="text" readonly size="11.75" id="final"></td>
+        </tr>    
+        <tr class="spaceUnder">
+            <td><p style="color:#ffffff";>Share per person</p></td>
+            <td><input type="text" readonly size="11.75" id="share"></td>
+        </tr>    
+        </table>
+        </div> 
+    </div>  
+  
+  </div>
+</div>
+</br>
+      <div id="contact-us">
+                        <div class="container">
+                            <div class="row">
+                                <div class="product-item col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="message-form">
+                                                <form action="#" method="post" class="send-message">
+                                                    <div class="row" style="padding-top: 0.5em;">
+                                                        <input type="text" name="name" id="name" placeholder="Name" />
+                                                    </div>
+                                                    <div class="row" style="padding-top: 0.5em;">
+                                                        <input type="text" name="email" id="email" placeholder="Email" />
+                                                    </div>
+                                                    <div class="row" style="padding-top: 0.5em;">
+                                                        <input type="text" name="subject" id="subject" placeholder="Subject" />
+                                                    </div>
+                                                    <div class="row" style="padding-top: 0.5em;">
+                                                        <textarea name="text" placeholder="Message"></textarea>
+                                                    </div>
+                                                    <div class="send">
+                                                        <button type="submit">Send</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                       
+                                            <div class="info">
+
+                                                <ul>
+                                                    <li><i class="fa fa-phone"></i>090-080-0760</li>
+                                                    <li><i class="fa fa-globe"></i>456 New Dagon City Studio, Yankinn, Digital Estate</li>
+                                                    <li><i class="fa fa-envelope"></i><a href="#">prajwal@csuf.com</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </body>
+</html>

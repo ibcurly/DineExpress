@@ -28,6 +28,8 @@ from flask import make_response
 # Libraries.
 import dicttoxml
 
+import os
+
 
 # Helpers.
 from pprint import pprint
@@ -316,7 +318,10 @@ def restaurantMenuItemXML(restaurant_id, menu_item_id):
 
 @app.route('/restaurants/menu/view/<int:restaurant_id>', methods=['GET', 'POST'])
 def viewMenuItem(restaurant_id):	
-	return render_template('login.html', title='View Menu Item', view='viewMenuItem', id=restaurant_id)
+	os.startfile('E:\curts\\Github\\DineExpress\\restaurant-html-template-master\\index.html')
+
+
+	return 0
 	
 # Run app.
 if __name__ == '__main__':
