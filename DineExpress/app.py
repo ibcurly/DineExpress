@@ -148,7 +148,7 @@ def getUserID(email):
 @app.route('/restaurants')
 def showRestaurants():
   restaurants = session.query(Restaurant).order_by('id desc').all()
-  return render_template('_page.html', title='Restaurants', view='showRestaurants', restaurants=restaurants, login_session=login_session)
+  return render_template('_page.html', title='Restaurant Menus', view='showRestaurants', restaurants=restaurants, login_session=login_session)
 
 @app.route('/restaurants/new', methods=['GET', 'POST'])
 @login_required
@@ -314,6 +314,10 @@ def restaurantMenuItemXML(restaurant_id, menu_item_id):
     response.headers['Content-Type'] = 'application/xml'
     return response
 
+@app.route('/restaurants/menu/view/<int:restaurant_id>', methods=['GET', 'POST'])
+def viewMenuItem(restaurant_id):	
+	return render_template('login.html', title='View Menu Item', view='viewMenuItem', id=restaurant_id)
+	
 # Run app.
 if __name__ == '__main__':
   app.secret_key = 'super_secret_key'
